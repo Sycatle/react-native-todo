@@ -1,0 +1,13 @@
+import React from 'react';
+import { View, Text, Pressable } from 'react-native';
+
+export default function TaskItem({ task, onDelete }: { task: string; onDelete: () => void }) {
+  return (
+    <View className="flex-row justify-between items-center bg-white px-4 py-3 rounded-xl mb-2 shadow-sm">
+      <Text className="text-base text-gray-800">{task}</Text>
+      <Pressable onPress={onDelete}>
+        <Text className="text-red-500 font-bold">Suppr</Text>
+      </Pressable>
+    </View>
+  );
+}
