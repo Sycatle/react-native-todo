@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, TextInput, Pressable, Text } from 'react-native';
+import { View, TextInput } from 'react-native';
 
 export default function TaskInput({ onAdd }: { onAdd: (text: string) => void }) {
   const [text, setText] = useState('');
@@ -12,21 +12,19 @@ export default function TaskInput({ onAdd }: { onAdd: (text: string) => void }) 
   };
 
   return (
-    <View className="flex-row items-center gap-2 mt-auto py-2 bg-gray-100">
+    <View className="flex-row items-center gap-2 py-2 px-4">
       <TextInput
         value={text}
         onChangeText={setText}
         placeholder="Ajouter une tâche..."
-        className="flex-1 px-4 py-2 bg-white border border-gray-300 rounded-xl placeholder:text-gray-400"
+        className="flex-1 px-4 py-4 bg-white border border-slate-300 rounded-xl placeholder:text-gray-400"
         onSubmitEditing={handleAdd}
         returnKeyType="done"
-        autoCapitalize="none"
         autoCorrect={false}
-        clearButtonMode="while-editing"
       />
-      <Pressable onPress={handleAdd} className="bg-blue-500 px-4 py-2 rounded-xl">
+      {/* <Pressable onPress={handleAdd} className="bg-blue-500 px-4 py-2 rounded-xl">
         <Text className="text-white font-bold">+</Text>
-      </Pressable>
+      </Pressable> */}
     </View>
   );
 }
