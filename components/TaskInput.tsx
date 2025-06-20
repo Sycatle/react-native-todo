@@ -12,7 +12,7 @@ export default function TaskInput({ onAdd }: { onAdd: (text: string) => void }) 
   };
 
   return (
-    <View className="flex-row items-center gap-2 py-2 px-4">
+    <View className="flex-row items-center gap-2 py-2 px-4 duration-20 mb-4">
       <TextInput
         value={text}
         onChangeText={setText}
@@ -22,9 +22,6 @@ export default function TaskInput({ onAdd }: { onAdd: (text: string) => void }) 
         returnKeyType="done"
         autoCorrect={false}
       />
-      {/* <Pressable onPress={handleAdd} className="bg-blue-500 px-4 py-2 rounded-xl">
-        <Text className="text-white font-bold">+</Text>
-      </Pressable> */}
     </View>
   );
 }
